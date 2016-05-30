@@ -1,0 +1,29 @@
+   <div class="row">
+      <div class="col-sm-10">
+        <section ng-click="gameName()" class="row" ng-repeat="article in articles">
+          <div  class="col-sm-4">
+            <img class="img-responsive" ng-src="{{article.image}}">
+          </div>
+           <div class="col-sm-8">
+            <h3>{{article.title}}</h3>
+            <small>{{article.date_published}}</small>
+            <p>{{article.body}}</p>
+            <a class="btn btn-default sm" href="#readmore">Read more</a>
+          </div>
+        </section>
+      </div>
+      <div class="col-sm-2">
+        <div class="sidebar-element">
+          <h4>Sort by DESC (title)</h4>
+          <ul class="list-group listing" ng-repeat="list in articles | orderBy: 'title'">
+          <li class="list-group-item">{{list.title}}</li>
+        </ul>
+        </div>
+        <div class="sidebar-element">
+          <h4>Sort by Categories</h4>
+          <ul class="list-group listing" ng-repeat="list in articles | orderBy: 'category_id'">
+          <li class="list-group-item">{{list.title}}</li>
+        </ul>
+      </div>
+  </div>
+</div>

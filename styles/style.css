@@ -1,0 +1,33 @@
+small{
+	margin-bottom: 3px;
+}
+
+section {
+	  border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.list-group {
+    padding-left: 0;
+    margin-bottom: -11px;
+    margin-top: 10px;
+}
+
+.sidebar-element {
+	margin-bottom: 29px;
+	background-color: #efefef;
+	padding-top: 5px;
+	display: none;
+}
+
+
+@media(min-width:730px){
+	.sidebar-element {
+	margin-bottom: 29px;
+	background-color: #efefef;
+	padding-top: 5px;
+	display: block;
+}
+}
