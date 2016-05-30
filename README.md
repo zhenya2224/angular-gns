@@ -1,2 +1,2 @@
 # angular-gns
-# angular-gns
+Small angular app
