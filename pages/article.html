@@ -1,13 +1,37 @@
-   <div class="row">
+     <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+        <a class="navbar-brand" href="#/">GNS</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li ng-repeat="category in categories"><a href="#/">{{category.name}}</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><i class="fa fa-user-plus"></i> Sign Up</a></li>
+          <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+   <div class="container">
+     <div class="row">
       <div class="col-sm-10">
         <section class="row">
           <div  class="col-sm-4">
-            <img class="img-responsive" ng-src="{{gameImage}}">
+            <img class="img-responsive" ng-src="{{articles[whichItem].image}}">
           </div>
            <div class="col-sm-8">
-            <h3>{{gameTitle}}</h3>
-            <small>{{gameDate}}</small>
-            <p>{{gameBodyMessage}}</p>
+            <h3>{{articles[whichItem].title}}</h3>
+            <small>{{articles[whichItem].date_published}}</small>
+            <p>{{articles[whichItem].body}}</p>
             <a class="btn btn-default sm" href="#/">Go back</a>
           </div>
         </section>
@@ -21,9 +45,11 @@
         </div>
         <div class="sidebar-element">
           <h4>Sort by Categories</h4>
-          <ul class="list-group listing" ng-repeat="list in articles | filter:{ category_id: gameCategory}" >
+          <ul class="list-group listing" ng-repeat="list in articles | filter:{ category_id: articles[whichItem].category_id}" >
           <li class="list-group-item">{{list.title}}</li>
         </ul>
       </div>
   </div>
 </div>
+   </div>
+   
